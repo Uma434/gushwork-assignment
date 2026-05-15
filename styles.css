@@ -1,11 +1,9 @@
 /* ============================================================
-   styles.css — Mascalon HDPE Pipes Product Page
-   Design: Industrial-refined, navy + orange accent
+   styles.css — Mangalam HDPE Pipes Product Page
    ============================================================ */
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Palette */
   --clr-navy:        #0d1b2a;
   --clr-navy-mid:    #1a2e44;
   --clr-navy-light:  #233d55;
@@ -19,26 +17,21 @@
   --clr-highlight:   #fff7f2;
   --clr-blue:        #2B3990;
 
-  /* Typography */
   --font-display: 'Sora', sans-serif;
   --font-body:    'DM Sans', sans-serif;
 
-  /* Spacing */
   --section-py: 5rem;
   --container-max: 1200px;
   --container-px: 1.5rem;
 
-  /* Radius */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
 
-  /* Shadows */
   --shadow-sm: 0 1px 4px rgba(0,0,0,0.07);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
 
-  /* Transitions */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.3s var(--ease-out);
 }
@@ -106,15 +99,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .btn--outline:hover { background: var(--clr-navy); color: var(--clr-white); }
 .btn--sm { padding: 0.5rem 1rem; font-size: 0.8125rem; }
-
-/* Dark button — used in contact form */
-.btn--dark {
-  background: #1a1a2e;
-  color: var(--clr-white);
-}
+.btn--dark { background: #1a1a2e; color: var(--clr-white); }
 .btn--dark:hover { background: var(--clr-blue); transform: translateY(-1px); }
-
-/* Full-width button */
 .btn--full { width: 100%; justify-content: center; }
 
 /* ============================================================
@@ -158,7 +144,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 2rem;
   padding-block: 0.9rem;
 }
-
 .nav__logo {
   display: flex;
   flex-direction: column;
@@ -179,7 +164,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
 .nav__links {
   display: flex;
   gap: 1.75rem;
@@ -212,14 +196,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    HERO
    ============================================================ */
-.hero {
-  padding-block: 2.5rem 3rem;
-}
-.breadcrumb {
-  font-size: 0.8rem;
-  color: var(--clr-muted);
-  margin-bottom: 1.5rem;
-}
+.hero { padding-block: 2.5rem 3rem; }
+.breadcrumb { font-size: 0.8rem; color: var(--clr-muted); margin-bottom: 1.5rem; }
 .breadcrumb span { color: var(--clr-text); font-weight: 500; }
 
 .hero__layout {
@@ -229,7 +207,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: start;
 }
 
-/* ------ Carousel ------ */
+/* Carousel */
 .carousel-wrapper { position: relative; }
 
 .badges {
@@ -265,7 +243,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: transform 0.45s var(--ease-out);
   will-change: transform;
 }
-
 .carousel__slide {
   min-width: 100%;
   height: 100%;
@@ -279,7 +256,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: transform 0.4s var(--ease-out);
 }
 
-/* ---------- ZOOM PREVIEW ---------- */
+/* Zoom preview */
 .zoom-preview {
   position: absolute;
   top: 8px;
@@ -304,10 +281,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform-origin: var(--zx, 50%) var(--zy, 50%);
   transition: transform-origin 0.08s linear;
 }
-.carousel__slide:hover .zoom-preview {
-  opacity: 1;
-  transform: scale(1);
-}
+.carousel__slide:hover .zoom-preview { opacity: 1; transform: scale(1); }
 .carousel__slide:hover img { transform: scale(1.04); }
 
 .carousel__btn {
@@ -433,7 +407,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .specs-table-wrap {
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid rgba(233, 19, 19, 0.1);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .specs-table {
   width: 100%;
@@ -459,21 +433,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .specs-table tbody tr:last-child { border-bottom: none; }
 .specs-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 .specs-table tbody tr:hover { background: rgba(255,255,255,0.06); }
-.specs-table td {
-  padding: 0.85rem 1.25rem;
-  color: rgba(255,255,255,0.85);
-}
+.specs-table td { padding: 0.85rem 1.25rem; color: rgba(255,255,255,0.85); }
 .specs-table td:first-child { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
 
 .specs-download { text-align: center; margin-top: 2rem; }
-.specs-download .btn--outline {
-  border-color: rgba(255,255,255,0.35);
-  color: var(--clr-white);
-}
+.specs-download .btn--outline { border-color: rgba(255,255,255,0.35); color: var(--clr-white); }
 .specs-download .btn--outline:hover { background: rgba(255,255,255,0.12); }
 
 /* ============================================================
-   FEATURES / BUILT TO LAST
+   FEATURES
    ============================================================ */
 .features-section {
   padding-block: var(--section-py);
@@ -515,12 +483,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 0.5rem;
 }
 .feature-card p { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.65; }
-
-/* Replaces old inline style on features CTA div */
-.features-cta {
-  text-align: center;
-  margin-top: 2.5rem;
-}
+.features-cta { text-align: center; margin-top: 2.5rem; }
 
 /* ============================================================
    FAQ
@@ -533,7 +496,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .faq-section .section-title { margin-bottom: 2rem; }
 
 .faq-list { border: 1px solid var(--clr-border); border-radius: var(--radius-md); overflow: hidden; }
-
 .faq-item { border-bottom: 1px solid var(--clr-border); }
 .faq-item:last-child { border-bottom: none; }
 
@@ -589,11 +551,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .catalogue-title { font-weight: 600; font-size: 0.95rem; color: var(--clr-navy); margin-bottom: 0.25rem; }
 .catalogue-sub { font-size: 0.82rem; color: var(--clr-muted); }
-.catalogue-form {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
+.catalogue-form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .catalogue-form input {
   padding: 0.55rem 1rem;
   border: 1.5px solid var(--clr-border);
@@ -607,7 +565,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .catalogue-form input:focus { border-color: var(--clr-orange); }
 
 /* ============================================================
-   INDUSTRIES CAROUSEL
+   INDUSTRIES
    ============================================================ */
 .industries-section {
   padding-block: var(--section-py);
@@ -674,73 +632,107 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .ind-btn:hover { background: var(--clr-navy); color: var(--clr-white); border-color: var(--clr-navy); }
 
 /* ============================================================
-   MANUFACTURING PROCESS
+   MANUFACTURING PROCESS — FIXED
    ============================================================ */
 .process-section {
   padding-block: var(--section-py);
   background: var(--clr-white);
 }
+
+/* Pill-style tabs — replaces old underline tab bar */
 .process-tabs {
   display: flex;
-  gap: 0;
-  border-bottom: 2px solid var(--clr-border);
-  margin-bottom: 2rem;
-  overflow-x: auto;
-  scrollbar-width: none;
+  gap: 6px;
+  flex-wrap: wrap;
+  border-bottom: none;          /* no underline bar */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
 }
-.process-tabs::-webkit-scrollbar { display: none; }
+
 .process-tab {
-  padding: 0.65rem 1rem;
+  padding: 0.45rem 1.1rem;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--clr-muted);
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
+  border: 1.5px solid var(--clr-border);
+  border-radius: 999px;         /* pill shape */
+  background: transparent;
+  margin-bottom: 0;
   transition: var(--transition);
 }
-.process-tab:hover { color: var(--clr-navy); }
-.process-tab.active { color: var(--clr-orange); border-bottom-color: var(--clr-orange); }
+.process-tab:hover {
+  border-color: var(--clr-blue);
+  color: var(--clr-blue);
+}
+.process-tab.active {
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  border-color: var(--clr-blue);
+}
 
+/* Panel: card with border */
 .process-panel {
   display: none;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   align-items: center;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.25rem;
+  background: var(--clr-white);
 }
 .process-panel.active { display: grid; }
+
 .process-panel__text h3 {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--clr-navy);
   margin-bottom: 0.75rem;
 }
-.process-panel__text p { font-size: 0.9rem; color: var(--clr-muted); margin-bottom: 1rem; line-height: 1.7; }
-.process-checklist { list-style: none; }
+.process-panel__text p {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+/* Checklist with filled blue circle bullets */
+.process-checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .process-checklist li {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   font-size: 0.875rem;
+  font-weight: 500;
   color: var(--clr-text);
-  margin-bottom: 0.4rem;
 }
 .process-checklist li span {
-  color: var(--clr-orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  font-size: 0.65rem;
   font-weight: 700;
-  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1;
 }
+
 .process-panel__img {
   border-radius: var(--radius-md);
   overflow: hidden;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/10;
 }
 .process-panel__img img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ============================================================
-   TESTIMONIALS  ←  UPDATED
+   TESTIMONIALS
    ============================================================ */
 .testimonials-section {
   padding-block: var(--section-py);
@@ -754,7 +746,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
-
 .testimonial-card {
   background: var(--clr-white);
   border: 1px solid var(--clr-border);
@@ -765,12 +756,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 0.6rem;
   transition: var(--transition);
 }
-.testimonial-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
+.testimonial-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 
-/* Large blue opening quote mark */
 .testimonial-quote {
   font-family: Georgia, serif;
   font-size: 2.5rem;
@@ -779,8 +766,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: block;
   margin-bottom: 0.1rem;
 }
-
-/* Bold italic title line */
 .testimonial-title {
   font-family: var(--font-display);
   font-size: 0.9rem;
@@ -788,16 +773,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-navy);
   line-height: 1.4;
 }
-
-/* Body paragraph */
 .testimonial-body {
   font-size: 0.82rem;
   color: var(--clr-muted);
   line-height: 1.7;
   flex: 1;
 }
-
-/* Footer: avatar + name/role */
 .testimonial-footer {
   display: flex;
   align-items: center;
@@ -806,8 +787,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding-top: 0.75rem;
   border-top: 1px solid var(--clr-border);
 }
-
-/* Grey circle avatar placeholder */
 .testimonial-avatar {
   width: 36px;
   height: 36px;
@@ -815,7 +794,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: #d1d5db;
   flex-shrink: 0;
 }
-
 .testimonial-footer strong {
   display: block;
   font-family: var(--font-display);
@@ -824,10 +802,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-navy);
   margin-bottom: 0.1rem;
 }
-.testimonial-footer span {
-  font-size: 0.74rem;
-  color: var(--clr-muted);
-}
+.testimonial-footer span { font-size: 0.74rem; color: var(--clr-muted); }
 
 /* ============================================================
    PORTFOLIO
@@ -855,13 +830,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-navy);
   margin-bottom: 0.5rem;
 }
-.portfolio-card__body .btn {
-  width: 100%;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-}
 .portfolio-card__body p { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.65; margin-bottom: 1rem; }
+.portfolio-card__body .btn { width: 100%; margin-top: 1rem; display: flex; justify-content: center; }
 
 .cta-bar {
   background: var(--clr-off-white);
@@ -912,14 +882,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .resource-download { margin-left: auto; }
 
 /* ============================================================
-   CONTACT SECTION  ←  UPDATED
+   CONTACT
    ============================================================ */
 .contact-section {
   padding-block: var(--section-py);
   background: var(--clr-off-white);
 }
-
-/* Blue rounded card wrapping both columns */
 .contact-card {
   background: var(--clr-blue);
   border-radius: var(--radius-lg);
@@ -929,8 +897,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 3rem;
   align-items: center;
 }
-
-/* Left text */
 .contact-left h2 {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
@@ -951,13 +917,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.65;
 }
 .contact-assist strong { color: rgba(255,255,255,0.9); font-weight: 600; }
-.contact-assist a {
-  color: rgba(255,255,255,0.85);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
+.contact-assist a { color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px; }
 
-/* Right white form card */
 .contact-form-card {
   background: var(--clr-white);
   border-radius: var(--radius-md);
@@ -970,12 +931,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-navy);
   margin-bottom: 1.1rem;
 }
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
+.contact-form { display: flex; flex-direction: column; gap: 0.65rem; }
 .contact-form input {
   padding: 0.62rem 0.9rem;
   border: 1.5px solid var(--clr-border);
@@ -989,7 +945,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .contact-form input::placeholder { color: #94a3b8; }
 .contact-form input:focus { border-color: var(--clr-blue); }
 
-/* Phone row with country code */
 .phone-row {
   display: flex;
   border: 1.5px solid var(--clr-border);
@@ -998,7 +953,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: border-color var(--transition);
 }
 .phone-row:focus-within { border-color: var(--clr-blue); }
-
 .phone-country {
   display: flex;
   align-items: center;
@@ -1014,7 +968,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
 }
 .phone-chevron { font-size: 0.6rem; color: var(--clr-muted); }
-
 .phone-row input {
   flex: 1;
   border: none;
@@ -1028,14 +981,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .phone-row input::placeholder { color: #94a3b8; }
 
 /* ============================================================
-   FOOTER  ←  UPDATED
+   FOOTER
    ============================================================ */
-.site-footer {
-  background: var(--clr-white);
-  font-family: var(--font-body);
-}
+.site-footer { background: var(--clr-white); font-family: var(--font-body); }
 
-/* --- Top bar: logo + tagline --- */
 .footer-top {
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
@@ -1046,14 +995,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: space-between;
   gap: 2rem;
 }
-
-/* Mangalam logo */
-.footer-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-}
+.footer-logo { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
 .footer-logo__wordmark {
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -1062,14 +1004,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
-.footer-logo__big-m {
-  font-size: 1.5rem;
-  color: var(--clr-navy);
-}
-.footer-logo__badge-row {
-  display: flex;
-  margin-top: 3px;
-}
+.footer-logo__big-m { font-size: 1.5rem; color: var(--clr-navy); }
+.footer-logo__badge-row { display: flex; margin-top: 3px; }
 .footer-logo__hdpe {
   font-family: var(--font-display);
   font-size: 0.6rem;
@@ -1089,8 +1025,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 2px 6px;
   letter-spacing: 0.08em;
 }
-
-/* Tagline */
 .footer-tagline {
   font-family: var(--font-display);
   font-size: 1.05rem;
@@ -1099,12 +1033,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-align: right;
   line-height: 1.45;
 }
-.footer-tagline__accent {
-  color: var(--clr-blue);
-  font-weight: 700;
-}
+.footer-tagline__accent { color: var(--clr-blue); font-weight: 700; }
 
-/* --- Nav columns --- */
 .footer-nav {
   display: grid;
   grid-template-columns: 140px 220px 220px 1fr;
@@ -1113,7 +1043,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-bottom: 1px solid var(--clr-border);
   margin-bottom: 1.25rem;
 }
-
 .footer-col h4 {
   font-family: var(--font-display);
   font-size: 0.8rem;
@@ -1121,13 +1050,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-navy);
   margin-bottom: 0.9rem;
 }
-.footer-col ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-.footer-col li,
-.footer-col a {
+.footer-col ul { display: flex; flex-direction: column; gap: 0.45rem; }
+.footer-col li, .footer-col a {
   font-size: 0.8rem;
   color: var(--clr-muted);
   transition: color var(--transition);
@@ -1135,12 +1059,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-col a:hover { color: var(--clr-blue); }
 
-/* Contact column items with icons */
-.footer-contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
+.footer-contact-list { display: flex; flex-direction: column; gap: 0.55rem; }
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
@@ -1149,20 +1068,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-muted);
   line-height: 1.45;
 }
-.footer-contact-icon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  margin-top: 1px;
-  stroke: var(--clr-muted);
-}
+.footer-contact-icon { width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px; stroke: var(--clr-muted); }
 
-/* Social icons */
-.footer-social {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
+.footer-social { display: flex; gap: 0.5rem; margin-top: 1rem; }
 .footer-social__btn {
   width: 28px;
   height: 28px;
@@ -1174,28 +1082,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: var(--transition);
   background: var(--clr-white);
 }
-.footer-social__btn svg {
-  width: 13px;
-  height: 13px;
-}
+.footer-social__btn svg { width: 13px; height: 13px; }
 .footer-social__btn:hover { border-color: var(--clr-blue); }
 
-/* LinkedIn */
 .footer-social__btn--linkedin svg { fill: var(--clr-muted); stroke: none; }
 .footer-social__btn--linkedin:hover { background: #0a66c2; border-color: #0a66c2; }
 .footer-social__btn--linkedin:hover svg { fill: var(--clr-white); }
 
-/* X */
 .footer-social__btn--x svg { stroke: var(--clr-muted); fill: none; }
 .footer-social__btn--x:hover { background: var(--clr-navy); border-color: var(--clr-navy); }
 .footer-social__btn--x:hover svg { stroke: var(--clr-white); }
 
-/* Instagram */
 .footer-social__btn--instagram svg { stroke: var(--clr-muted); fill: none; }
 .footer-social__btn--instagram:hover { background: #e1306c; border-color: #e1306c; }
 .footer-social__btn--instagram:hover svg { stroke: var(--clr-white); }
 
-/* --- Bottom bar --- */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -1217,9 +1118,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-nav { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 960px) {
-  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-}
 
 @media (max-width: 960px) {
   .hero__layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -1227,16 +1125,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .industries-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .process-panel.active { grid-template-columns: 1fr; }
-  /* Contact */
   .contact-card { grid-template-columns: 1fr; padding: 2rem; }
-  /* Footer */
   .footer-top { flex-direction: column; align-items: flex-start; }
   .footer-tagline { text-align: left; }
 }
 
 @media (max-width: 700px) {
   :root { --section-py: 3rem; }
-  .nav__links { display: none; position: fixed; inset: 0; top: 56px; background: var(--clr-white); flex-direction: column; padding: 2rem; gap: 1.25rem; z-index: 90; border-top: 1px solid var(--clr-border); }
+  .nav__links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 56px;
+    background: var(--clr-white);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.25rem;
+    z-index: 90;
+    border-top: 1px solid var(--clr-border);
+  }
   .nav__links.open { display: flex; }
   .hamburger { display: flex; }
   .features-grid { grid-template-columns: 1fr; }
@@ -1255,11 +1162,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .specs-table { font-size: 0.8rem; }
   .specs-table td { padding: 0.65rem 0.75rem; }
   .contact-card { padding: 1.5rem; }
+  .process-tabs { gap: 4px; }
+  .process-tab { padding: 0.4rem 0.75rem; font-size: 0.72rem; }
+  .process-panel.active { padding: 1.25rem; }
 }
 
 @media (max-width: 480px) {
   .industries-grid { grid-template-columns: 1fr; }
-  .process-tabs { padding-bottom: 0.5rem; }
   .cta-bar { flex-direction: column; }
   .footer-nav { grid-template-columns: 1fr; }
 }
@@ -1271,9 +1180,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.fade-in-up {
-  animation: fadeInUp 0.55s var(--ease-out) both;
-}
+.fade-in-up { animation: fadeInUp 0.55s var(--ease-out) both; }
 .fade-in-up:nth-child(2) { animation-delay: 0.1s; }
 .fade-in-up:nth-child(3) { animation-delay: 0.2s; }
 
@@ -1282,10 +1189,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: translateY(24px);
   transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 }
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
+.reveal.visible { opacity: 1; transform: none; }
 
 /* ============================================================
    SCROLLBAR
