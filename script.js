@@ -1,24 +1,7 @@
-/**
- * script.js — Mascalon HDPE Pipes Product Page
- * Features:
- *  1. Sticky announcement header (appears after first-fold scroll, hides on scroll-up)
- *  2. Nav links toggle on mobile (hamburger)
- *  3. Image carousel with next/prev + thumbnail navigation
- *  4. Zoom-on-hover: cursor-tracked magnifier inside carousel slide
- *  5. FAQ accordion
- *  6. Process tabs
- *  7. Industries horizontal carousel (mobile)
- *  8. Scroll-reveal via IntersectionObserver
- *  9. Form handlers
- */
-
-/* ============================================================
-   1. STICKY ANNOUNCEMENT HEADER
-   ============================================================ */
 (function initStickyHeader() {
   const stickyHeader = document.getElementById('sticky-header');
   const siteHeader   = document.getElementById('site-header');
-  const THRESHOLD    = 80; // px past first fold
+  const THRESHOLD    = 80; 
 
   let lastScrollY = window.scrollY;
 
@@ -36,7 +19,7 @@
       siteHeader.classList.remove('pushed');
     }
 
-    // Hide when scrolling back up beyond hero
+
     if (!scrollingDown && currentY < THRESHOLD + 40) {
       stickyHeader.classList.remove('visible');
       stickyHeader.setAttribute('aria-hidden', 'true');
@@ -50,9 +33,7 @@
 })();
 
 
-/* ============================================================
-   2. HAMBURGER / MOBILE NAV
-   ============================================================ */
+
 (function initHamburger() {
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('nav-links');
@@ -64,7 +45,6 @@
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('open');
@@ -74,9 +54,7 @@
 })();
 
 
-/* ============================================================
-   3 + 4. IMAGE CAROUSEL WITH ZOOM
-   ============================================================ */
+
 (function initCarousel() {
   const track      = document.getElementById('carousel-track');
   const slides     = document.querySelectorAll('.carousel__slide');
@@ -89,30 +67,27 @@
   let current = 0;
   const total = slides.length;
 
-  /** Move carousel to slide index */
+
   function goTo(index) {
-    // Wrap around
+
     index = (index + total) % total;
 
-    // Update track position
     track.style.transform = `translateX(-${index * 100}%)`;
 
-    // Update active slide class
     slides[current].classList.remove('active');
     slides[index].classList.add('active');
 
-    // Update thumbnails
+   
     thumbBtns[current].classList.remove('active');
     thumbBtns[index].classList.add('active');
 
     current = index;
   }
 
-  // Arrow buttons
+
   prevBtn && prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn && nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  // Thumbnail clicks
   thumbBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const idx = parseInt(btn.dataset.index, 10);
@@ -120,13 +95,13 @@
     });
   });
 
-  // Keyboard navigation when carousel is focused
+ 
   document.getElementById('carousel').addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft')  goTo(current - 1);
     if (e.key === 'ArrowRight') goTo(current + 1);
   });
 
-  // Auto-play (pause on hover)
+
   let autoTimer = setInterval(() => goTo(current + 1), 4500);
   const carouselEl = document.getElementById('carousel');
   carouselEl.addEventListener('mouseenter', () => clearInterval(autoTimer));
@@ -135,7 +110,7 @@
     autoTimer = setInterval(() => goTo(current + 1), 4500);
   });
 
-  // Touch / swipe support
+
   let touchStartX = 0;
   carouselEl.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
@@ -145,7 +120,6 @@
     if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
   });
 
-  /* ---------- ZOOM on mouse move ---------- */
   slides.forEach((slide) => {
     const zoomImg = slide.querySelector('.zoom-preview img');
 
@@ -153,12 +127,10 @@
       if (!zoomImg) return;
 
       const rect = slide.getBoundingClientRect();
-      // Cursor position as percentage within the slide
       const pctX = ((e.clientX - rect.left) / rect.width)  * 100;
       const pctY = ((e.clientY - rect.top)  / rect.height) * 100;
 
-      // Shift the zoom image so it shows the area under cursor
-      // The zoom img is 200%/200% of the preview box, so origin = pctX / pctY
+      
       zoomImg.style.setProperty('--zx', `${pctX}%`);
       zoomImg.style.setProperty('--zy', `${pctY}%`);
       zoomImg.style.transformOrigin = `${pctX}% ${pctY}%`;
@@ -167,9 +139,7 @@
 })();
 
 
-/* ============================================================
-   5. FAQ ACCORDION
-   ============================================================ */
+
 (function initFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
 
@@ -180,14 +150,13 @@
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
 
-      // Close all first
       faqItems.forEach((el) => {
         el.classList.remove('open');
         el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         el.querySelector('.faq-icon').textContent = '+';
       });
 
-      // Toggle clicked item
+  
       if (!isOpen) {
         item.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
@@ -198,14 +167,12 @@
 })();
 
 
-/* ============================================================
-   6. PROCESS TABS
-   ============================================================ */
+
 (function initProcessTabs() {
   const tabs   = document.querySelectorAll('.process-tab');
   const panels = document.querySelectorAll('.process-panel');
 
-  // Lazy-build remaining panels from data (since only raw+extrusion exist in HTML)
+
   const tabData = {
     cooling:  { title: 'Controlled Cooling', desc: 'Freshly extruded pipes pass through a precision cooling tank to rapidly set their dimensions. Water temperature and flow rate are carefully calibrated to prevent warping and ensure dimensional stability.', checks: ['Vacuum sizing for tight tolerances', 'Water-bath temperature control'] },
     sizing:   { title: 'Precision Sizing & Calibration', desc: 'The pipe profile is drawn through calibration sleeves under vacuum, locking in the precise outer diameter specified by the relevant standards.', checks: ['OD tolerance ±0.5%', 'Roundness verification'] },
@@ -215,7 +182,7 @@
     packaging:{ title: 'Protective Packaging', desc: 'Straight pipes are bundled with protective end caps and bundled safely; coils are wound on returnable reels and shrink-wrapped for transport.', checks: ['UV-stable wrapping for outdoor storage', 'Custom coil length up to 500m'] },
   };
 
-  // Inject panels for tabs that don't have HTML panels yet
+
   const processContent = document.querySelector('.process-content');
   Object.entries(tabData).forEach(([key, d]) => {
     if (!document.getElementById(`tab-${key}`)) {
@@ -253,9 +220,7 @@
 })();
 
 
-/* ============================================================
-   7. INDUSTRIES CAROUSEL (mobile scroll / desktop nav buttons)
-   ============================================================ */
+
 (function initIndustriesNav() {
   const grid    = document.getElementById('industries-grid');
   const prevBtn = document.getElementById('ind-prev');
@@ -273,15 +238,11 @@
 })();
 
 
-/* ============================================================
-   8. SCROLL REVEAL (IntersectionObserver)
-   ============================================================ */
 (function initReveal() {
   const targets = document.querySelectorAll(
     '.feature-card, .specs-table, .industry-card, .testimonial-card, .portfolio-card, .resource-item, .faq-item'
   );
 
-  // Add reveal class to all targets
   targets.forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 4) * 0.08}s`;
@@ -300,9 +261,6 @@
 })();
 
 
-/* ============================================================
-   9. FORM HANDLERS
-   ============================================================ */
 function handleCatalogueSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
@@ -328,9 +286,6 @@ function handleContactSubmit(e) {
 }
 
 
-/* ============================================================
-   UTILITY: Active nav link highlight on scroll
-   ============================================================ */
 (function initNavHighlight() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__links a');
