@@ -855,6 +855,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--clr-navy);
   margin-bottom: 0.5rem;
 }
+.portfolio-card__body .btn {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
 .portfolio-card__body p { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.65; margin-bottom: 1rem; }
 
 .cta-bar {
